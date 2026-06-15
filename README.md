@@ -1,4 +1,4 @@
-# Brightwatt Energy — Lakehouse BI Platform
+# UK Energy Supplier  — Lakehouse BI Platform
 
 An end-to-end **Business Intelligence & Data Engineering** project built on free-tier tooling,
 modelling a fictional UK residential energy supplier. It takes messy, multi-format source data
