@@ -1,0 +1,51 @@
+account_id,first_name,last_name,email,postcode,region,tariff_id,segment,signup_date
+ACC-100001,Daniel,Smith,daniel.smith1@example.com,B9 2FP,North West,TAR-FIX12,residential,2023-11-21
+ACC-100002,James,Jones,,W7 4EQ,South East,TAR-GRN,residential,2023-07-22
+ACC-100003,Ethan,Clarke,ethan.clarke3@example.com,G6 2AP,South East,TAR-FIX12,residential,2023-10-19
+ACC-100004,Leila,Brown,,W2 7AQ,Midlands,TAR-GRN,residential,2022-02-04
+ACC-100005,Mei,Jones,mei.jones5@example.com,B4 2EN,London,TAR-EV,residential,2023-01-18
+ACC-100006,Priya,Brown,priya.brown6@example.com,B3 9GL,scotland,TAR-VAR,small_business,2020-11-02
+ACC-100007,Noah,Ahmed,noah.ahmed7@example.com,A4 1HN,London,TAR-EV,residential,2022-11-07
+ACC-100008,James,Jones,james.jones8@example.com,S7 8BN,Midlands,TAR-VAR,residential,2020-12-29
+ACC-100009,Zara,Taylor,zara.taylor9@example.com,N6 4BQ,Midlands,TAR-EV,residential,2021-05-25
+ACC-100010,Ethan,Khan,ethan.khan10@example.com,B7 7FP,NORTH WEST,TAR-GRN,residential,2022-04-21
+ACC-100011,Daniel,Singh,daniel.singh11@example.com,M2 5EL,North West,TAR-EV,residential,2023-03-05
+ACC-100012,Zara,Singh,zara.singh12@example.com,B5 9FL,Scotland,TAR-VAR,residential,2021-10-28
+ACC-100013,Ethan,Patel,ethan.patel13@example.com,M8 1AN,Midlands,TAR-GRN,residential,2024-08-31
+ACC-100014,Amara,Jones,amara.jones14@example.com,B9 3BR,Midlands,TAR-EV,residential,2021-12-11
+ACC-100015,Fatima,Taylor,fatima.taylor15@example.com,G5 7GR,Midlands,TAR-GRN,small_business,2021-08-24
+ACC-100016,Omar,Taylor,,W4 4AJ,WALES,TAR-FIX12,residential,2024-07-20
+ACC-100017,James,Khan,james.khan17@example.com,G9 3GQ,SCOTLAND,TAR-EV,residential,2021-12-12
+ACC-100018,Ethan,Begum,ethan.begum18@example.com,N7 8HR,WALES,TAR-FIX12,residential,2022-09-07
+ACC-100019,Amara,Wilson,amara.wilson19@example.com,G4 9EL,London,TAR-EV,residential,2023-04-11
+ACC-100020,Fatima,Begum,,B1 9HJ,South East,TAR-FIX12,residential,2021-08-01
+ACC-100021,Priya,Wilson,priya.wilson21@example.com,E7 1EN,Wales,TAR-EV,residential,2024-05-04
+ACC-100022,Noah,Singh,noah.singh22@example.com,E4 5BJ,London,TAR-FIX12,residential,2021-12-10
+ACC-100023,Amara,Khan,amara.khan23@example.com,E1 9AL,Midlands,TAR-FIX12,residential,2021-09-10
+ACC-100024,Daniel,Hughes,daniel.hughes24@example.com,G1 2ER,South East,TAR-GRN,residential,2021-06-23
+ACC-100025,Oliver,Murphy,oliver.murphy25@example.com,L8 6HJ,London,TAR-FIX12,small_business,2023-12-08
+ACC-100026,Mei,Evans,mei.evans26@example.com,M2 4DN,NORTH WEST,TAR-VAR,small_business,2023-12-05
+ACC-100027,Leila,Taylor,leila.taylor27@example.com,W1 9DR,London,TAR-FIX12,residential,2021-01-01
+ACC-100028,Fatima,Smith,fatima.smith28@example.com,G6 4GR,North West,TAR-GRN,small_business,2023-02-02
+ACC-100029,Fatima,Hughes,fatima.hughes29@example.com,A6 3GN,north west,TAR-VAR,small_business,2024-06-03
+ACC-100030,Liam,Singh,liam.singh30@example.com,E9 1HN,Wales,TAR-VAR,small_business,2020-10-17
+ACC-100031,Priya,Khan,priya.khan31@example.com,M4 4GJ,Scotland,TAR-GRN,small_business,2024-06-12
+ACC-100032,Mei,Singh,mei.singh32@example.com,E7 1BR,South East,TAR-GRN,small_business,2023-10-05
+ACC-100033,Ethan,Murphy,ethan.murphy33@example.com,B7 1HP,London,TAR-VAR,residential,2020-09-26
+ACC-100034,Leila,Begum,leila.begum34@example.com,G1 4EN,Scotland,TAR-GRN,residential,2023-05-24
+ACC-100035,Ethan,Ahmed,ethan.ahmed35@example.com,M1 2DL,Scotland,TAR-GRN,residential,2021-08-30
+ACC-100036,James,Evans,james.evans36@example.com,W2 7FL,Wales,TAR-GRN,residential,2022-03-23
+ACC-100037,Zara,Wilson,zara.wilson37@example.com,G6 7AR,North West,TAR-GRN,residential,2020-10-26
+ACC-100038,Daniel,Hughes,daniel.hughes38@example.com,N6 7GN,North West,TAR-VAR,residential,2022-12-08
+ACC-100039,Noah,Murphy,noah.murphy39@example.com,L7 9HJ,Wales,TAR-GRN,residential,2021-03-21
+ACC-100040,Oliver,Wilson,oliver.wilson40@example.com,S4 9ER,Midlands,TAR-VAR,residential,2022-03-12
+ACC-100041,Fatima,Taylor,fatima.taylor41@example.com,L4 4BJ,London,TAR-FIX12,residential,2023-05-09
+ACC-100042,Aisha,Evans,aisha.evans42@example.com,G7 8EL,North West,TAR-VAR,residential,2021-06-11
+ACC-100043,Omar,Clarke,omar.clarke43@example.com,W8 1FL,North West,TAR-FIX12,small_business,2020-10-07
+ACC-100044,Priya,Clarke,priya.clarke44@example.com,M8 9EQ,Wales,TAR-EV,residential,2021-05-01
+ACC-100045,Zara,Hughes,zara.hughes45@example.com,L9 8GL,Wales,TAR-GRN,small_business,2021-02-04
+ACC-100046,James,Singh,james.singh46@example.com,B3 3BP,scotland,TAR-VAR,residential,2021-08-22
+ACC-100047,James,Wilson,james.wilson47@example.com,G7 7HQ,Wales,TAR-FIX12,small_business,2024-04-27
+ACC-100048,Aisha,Khan,aisha.khan48@example.com,W9 4EL,Scotland,TAR-GRN,small_business,2022-04-27
+ACC-100049,Aisha,Khan,aisha.khan49@example.com,E8 3FQ,Wales,TAR-FIX12,small_business,2022-05-27
+ACC-100050,Mei,Evans,mei.evans50@example.com,E1 5EN,London,TAR-VAR,small_business,2022-01-30

@@ -1,0 +1,26 @@
+# Brightwatt Energy — synthetic data generator config
+
+seed: 42
+output_dir: data/raw
+
+# Scale
+n_customers: 50          
+start_date: "2024-10-01"
+n_days: 30               # bump to 180+ for seasonality + bigger volume
+reading_interval_minutes: 30   # half-hourly smart-meter reads (48/day)
+
+# Data-quality defects (rates are fractions of total readings unless noted).
+# Every injected defect is logged to _dq_manifest.json as ground truth.
+defects:
+  duplicate_rate: 0.004        # exact duplicate meter+timestamp rows
+  null_consumption_rate: 0.003 # missing kwh value
+  negative_consumption_rate: 0.001  # impossible negative kwh
+  estimated_read_rate: 0.05    # legitimate but flagged 'E' (not actuals)
+  orphan_reading_rate: 0.0015  # reading for a meter_id not in meters.csv
+  outlier_rate: 0.0008         # consumption spikes (meter fault / anomaly)
+  gap_rate: 0.01               # randomly drop half-hours (missing intervals)
+  late_arrival_days: 3         # some reads timestamped before the batch window
+  late_arrival_rate: 0.002
+  schema_drift_batch: true     # emit one readings batch with a drifted schema
+  missing_email_rate: 0.08     # customers with no contactable email (GDPR)
+  region_casing_noise: true    # inconsistent region capitalisation

@@ -1,0 +1,5 @@
+tariff_id,tariff_name,tariff_type,unit_rate_pence,standing_charge_pence_per_day
+TAR-FIX12,Fixed Saver 12m,fixed,24.5,53.0
+TAR-VAR,Standard Variable,variable,27.0,60.0
+TAR-GRN,Green Renewable,green,26.2,58.0
+TAR-EV,EV Smart Night,variable,22.0,55.0
