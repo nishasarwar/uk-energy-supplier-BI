@@ -110,4 +110,4 @@ schema drift · missing customer emails · inconsistent region casing. Every def
 
 ---
 
-*Brightwatt Energy is a fictional company; all data is synthetic.*
+*UK Energy Supplier is a fictional company; all data is synthetic.*
