@@ -80,12 +80,7 @@ Server · Azure DevOps.
 brightwatt-energy-bi/
 ├── src/generate_data.py            # synthetic generator with injected DQ defects + manifest
 ├── config/generator_config.yaml    # scale + defect-rate configuration
-├── notebooks/                      # Databricks notebooks (re-importable .py source)
-│   ├── 01_bronze_ingest.py
-│   ├── 02_silver_readings.py
-│   ├── 03_silver_dimensions.py
-│   ├── 04_gold_star_schema.py
-│   └── 05_scd2_change_demo.py
+├── notebooks/                      # Databricks notebooks
 ├── data/sample/                    # small sample of generated data (full raw is gitignored)
 ├── sql/  powerbi/  governance/  ml/   # upcoming phases
 └── README.md
@@ -102,7 +97,7 @@ python src/generate_data.py --config config/generator_config.yaml   # writes dat
 ```
 
 Then in **Databricks Free Edition**: create a Volume at `workspace.brightwatt.raw`, upload
-`data/raw/`, and run the notebooks in order (`01` → `05`).
+`data/raw/`, and run the files in notebooks/
 
 ---
 
