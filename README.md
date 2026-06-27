@@ -1,4 +1,4 @@
-# UK Energy Supplier  — Lakehouse BI Platform
+# UK Energy Supplier — Lakehouse BI Platform
 
 An end-to-end **Business Intelligence & Data Engineering** project built on free-tier tooling,
 modelling a fictional UK residential energy supplier. It takes messy, multi-format source data
@@ -6,8 +6,25 @@ through a **medallion lakehouse** (bronze → silver → gold) into a governed *
 for analytics — with the data-quality, governance and modelling rigour expected of a senior role.
 
 > Built to demonstrate the full Senior BI Analyst stack: Databricks (Spark, Delta Lake, Unity
-> Catalog), Python ELT, dimensional modelling, data-quality governance, and (in progress) Power BI,
-> SQL Server, and CI/CD.
+> Catalog), Python ELT, dimensional modelling, data-quality governance, Power BI, and CI/CD.
+
+---
+
+## Dashboards
+
+![Consumption Overview](docs/screenshots/consumption.png)
+*Consumption Overview — regional kWh breakdown, daily trend, meter type split*
+
+![Billing & Revenue](docs/screenshots/billing.png)
+*Billing & Revenue — invoice status, revenue by tariff and segment*
+
+## Data platform
+
+![Power BI star schema](docs/screenshots/schema.png)
+*Power BI semantic model — star schema with SCD2 dim_customer and surrogate keys*
+
+![Unity Catalog](docs/screenshots/medallion.png)
+*Unity Catalog — bronze/silver/gold medallion architecture with governed tables*
 
 ---
 
@@ -36,7 +53,7 @@ Being able to **explain every difference** is the difference between *"I cleaned
   + schema drift)      + lineage           + drift conformed         surrogate keys, SCD2)
                                                                           │
                                                   reconciled vs           ├─► SQL Server mart  (planned)
-                                                  ground-truth manifest   └─► Power BI          (planned)
+                                                  ground-truth manifest   └─► Power BI          ✓ done
 
  Governance: Unity Catalog · GDPR masking · RLS   |   DevOps: Git · Azure DevOps CI/CD (planned)
 ```
@@ -54,12 +71,14 @@ paginated reporting; meter faults feed the ML anomaly POC.
 | **Bronze** | All formats landed faithfully as Delta (CSV folder ingest, multiLine JSON, isolated schema-drift batch); audit columns (`_ingested_at`, `_source_file`) for lineage; zero-loss reconciliation |
 | **Silver** | Type casting, dedup on natural key, **quarantine-don't-delete** with tagged reject reasons, schema-drift conformance, region standardisation, **DQ reconciliation vs ground-truth manifest** |
 | **Gold** | Dimensional **star schema** (`fact_consumption`, `fact_billing` + `dim_customer/meter/tariff/date`), **surrogate keys**, **SCD2** history-tracking dimension with **point-in-time fact attribution** |
+| **Governance** | Unity Catalog **column masking** on PII (email, postcode); **GDPR right-to-erasure** — cross-layer DELETE across 16 tables, scheduled VACUUM to purge Delta history, audit log |
+| **Reporting** | Power BI **semantic model**, DAX measures, **RLS by region**, two dashboard pages; **paginated billing statement** via Report Builder connected to the published semantic model |
 
 ### Roadmap
 - [x] Bronze ingestion · Silver cleaning + DQ reconciliation · Gold star schema
 - [x] Surrogate keys + SCD2 (slowly changing dimension)
-- [ ] Governance: Unity Catalog column masking + GDPR right-to-erasure
-- [ ] Power BI: semantic model, DAX, RLS, dashboards + paginated billing statement
+- [x] Governance: Unity Catalog column masking + GDPR right-to-erasure
+- [x] Power BI: semantic model, DAX, RLS, dashboards + paginated billing statement
 - [ ] SQL Server operational mart (stored procs, indexing, tuning)
 - [ ] Azure DevOps CI/CD (Databricks Asset Bundles) + scheduled Workflow
 - [ ] ML POC: consumption forecasting + anomaly detection
@@ -69,8 +88,8 @@ paginated reporting; meter faults feed the ML anomaly POC.
 ## Tech stack
 
 **Databricks Free Edition** (Spark, Delta Lake, Unity Catalog) · **Python / PySpark** ·
-**Delta Lake** · dimensional modelling (Kimball star schema, SCD2) · *(planned)* Power BI · SQL
-Server · Azure DevOps.
+**Delta Lake** · dimensional modelling (Kimball star schema, SCD2) · **Power BI Desktop** ·
+**DAX** · **Power BI Report Builder** · *(planned)* SQL Server · Azure DevOps.
 
 ---
 
@@ -80,7 +99,8 @@ Server · Azure DevOps.
 brightwatt-energy-bi/
 ├── src/generate_data.py            # synthetic generator with injected DQ defects + manifest
 ├── config/generator_config.yaml    # scale + defect-rate configuration
-├── notebooks/                      # Databricks notebooks
+├── notebooks/                      # Databricks notebooks (01_bronze → 07_gdpr_erasure)
+├── docs/screenshots/               # dashboard and platform screenshots
 ├── data/sample/                    # small sample of generated data (full raw is gitignored)
 ├── sql/  powerbi/  governance/  ml/   # upcoming phases
 └── README.md
@@ -97,7 +117,7 @@ python src/generate_data.py --config config/generator_config.yaml   # writes dat
 ```
 
 Then in **Databricks Free Edition**: create a Volume at `workspace.brightwatt.raw`, upload
-`data/raw/`, and run the files in notebooks/
+`data/raw/`, and run the notebooks in order (`01` → `07`).
 
 ---
 
